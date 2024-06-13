@@ -8,5 +8,7 @@
         <page name='169-Majority Element'/>
         <page name='189-Rotate Array'/>
         <page name='121-Best Time to Buy and Sell Stock'/>
+        <page name='122-Best Time to Buy and Sell Stock II'/>
+        <page name='55-Jump Game'/>
     </pages>
 </playground>
