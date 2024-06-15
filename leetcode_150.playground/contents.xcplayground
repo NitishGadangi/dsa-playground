@@ -10,5 +10,10 @@
         <page name='121-Best Time to Buy and Sell Stock'/>
         <page name='122-Best Time to Buy and Sell Stock II'/>
         <page name='55-Jump Game'/>
+        <page name='45-Jump Game II'/>
+        <page name='274-H-Index'/>
+        <page name='380-Insert Delete GetRandom O(1)'/>
+        <page name='238-Product of Array Except Self'/>
+        <page name='134-Gas Station'/>
     </pages>
 </playground>
