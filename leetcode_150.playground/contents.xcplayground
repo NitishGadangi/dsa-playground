@@ -25,5 +25,22 @@
         <page name='6-Zigzag Conversion'/>
         <page name='28-Find the Index of the First Occurrence in a String'/>
         <page name='125-Valid Palindrome'/>
+        <page name='392-Is Subsequence'/>
+        <page name='167-Two Sum II - Input Array Is Sorted'/>
+        <page name='11-Container With Most Water'/>
+        <page name='15-3Sum'/>
+        <page name='209-Minimum Size Subarray Sum'/>
+        <page name='3-Longest Substring Without Repeating Characters '/>
+        <page name='30-Substring with Concatenation of All Words'/>
+        <page name='76-Minimum Window Substring'/>
+        <page name='383-Ransom Note'/>
+        <page name='205-Isomorphic Strings'/>
+        <page name='290-Word Pattern'/>
+        <page name='242-Valid Anagram'/>
+        <page name='49-Group Anagrams'/>
+        <page name='1-Two Sum'/>
+        <page name='202-Happy Number'/>
+        <page name='219-Contains Duplicate II'/>
+        <page name='128-Longest Consecutive Sequence'/>
     </pages>
 </playground>
