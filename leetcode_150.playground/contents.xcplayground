@@ -46,5 +46,8 @@
         <page name='71-Simplify Path'/>
         <page name='155-Min Stack'/>
         <page name='150-Evaluate Reverse Polish Notation'/>
+        <page name='141-Linked List Cycle'/>
+        <page name='2-Add Two Numbers'/>
+        <page name='21-Merge Two Sorted Lists'/>
     </pages>
 </playground>
