@@ -49,5 +49,16 @@
         <page name='141-Linked List Cycle'/>
         <page name='2-Add Two Numbers'/>
         <page name='21-Merge Two Sorted Lists'/>
+        <page name='138-Copy List with Random Pointer'/>
+        <page name='25-Reverse Nodes in k-Group'/>
+        <page name='92-Reverse Linked List II'/>
+        <page name='19-Remove Nth Node From End of List'/>
+        <page name='82-Remove Duplicates from Sorted List II'/>
+        <page name='61-Rotate List'/>
+        <page name='146-LRU Cache'/>
+        <page name='86-Partition List'/>
+        <page name='104-Maximum Depth of Binary Tree'/>
+        <page name='100-Same Tree'/>
+        <page name='226-Invert Binary Tree'/>
     </pages>
 </playground>
