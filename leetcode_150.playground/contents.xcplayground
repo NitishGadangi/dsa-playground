@@ -60,5 +60,14 @@
         <page name='104-Maximum Depth of Binary Tree'/>
         <page name='100-Same Tree'/>
         <page name='226-Invert Binary Tree'/>
+        <page name='101-Symmetric Tree'/>
+        <page name='105-Construct Binary Tree from Preorder and Inorder Traversal'/>
+        <page name='106-Construct Binary Tree from Inorder and Postorder Traversal'/>
+        <page name='117-Populating Next Right Pointers in Each Node II'/>
+        <page name='112-Path Sum'/>
+        <page name='114-Flatten Binary Tree to Linked List'/>
+        <page name='129-Sum Root to Leaf Numbers'/>
+        <page name='124-Binary Tree Maximum Path Sum'/>
+        <page name='222-Count Complete Tree Nodes'/>
     </pages>
 </playground>
