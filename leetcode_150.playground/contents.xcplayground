@@ -69,5 +69,7 @@
         <page name='129-Sum Root to Leaf Numbers'/>
         <page name='124-Binary Tree Maximum Path Sum'/>
         <page name='222-Count Complete Tree Nodes'/>
+        <page name='236-Lowest Common Ancestor of a Binary Tree'/>
+        <page name='199-Binary Tree Right Side View'/>
     </pages>
 </playground>
