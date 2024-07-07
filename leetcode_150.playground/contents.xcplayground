@@ -71,5 +71,18 @@
         <page name='222-Count Complete Tree Nodes'/>
         <page name='236-Lowest Common Ancestor of a Binary Tree'/>
         <page name='199-Binary Tree Right Side View'/>
+        <page name='637-Average of Levels in Binary Tree'/>
+        <page name='102-Binary Tree Level Order Traversal'/>
+        <page name='103-Binary Tree Zigzag Level Order Traversal'/>
+        <page name='530-Minimum Absolute Difference in BST'/>
+        <page name='230-Kth Smallest Element in a BST'/>
+        <page name='98-Validate Binary Search Tree'/>
+        <page name='200-Number of Islands'/>
+        <page name='130-Surrounded Regions'/>
+        <page name='133-Clone Graph'/>
+        <page name='207-Course Schedule'/>
+        <page name='210-Course Schedule II'/>
+        <page name='108-Convert Sorted Array to Binary Search Tree'/>
+        <page name='148-Sort List'/>
     </pages>
 </playground>
