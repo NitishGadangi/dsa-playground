@@ -83,6 +83,16 @@
         <page name='207-Course Schedule'/>
         <page name='210-Course Schedule II'/>
         <page name='108-Convert Sorted Array to Binary Search Tree'/>
+        <page name='23-Merge k Sorted Lists'/>
         <page name='148-Sort List'/>
+        <page name='53-Maximum Subarray'/>
+        <page name='208-Implement Trie (Prefix Tree)'/>
+        <page name='918-Maximum Sum Circular Subarray'/>
+        <page name='212-Word Search II'/>
+        <page name='35-Search Insert Position'/>
+        <page name='153-Find Minimum in Rotated Sorted Array'/>
+        <page name='70-Climbing Stairs'/>
+        <page name='198-House Robber'/>
+        <page name='300-Longest Increasing Subsequence'/>
     </pages>
 </playground>
