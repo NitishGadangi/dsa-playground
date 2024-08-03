@@ -94,5 +94,8 @@
         <page name='70-Climbing Stairs'/>
         <page name='198-House Robber'/>
         <page name='300-Longest Increasing Subsequence'/>
+        <page name='162-Find Peak Element'/>
+        <page name='33-Search in Rotated Sorted Array'/>
+        <page name='34-Find First and Last Position of Element in Sorted Array'/>
     </pages>
 </playground>

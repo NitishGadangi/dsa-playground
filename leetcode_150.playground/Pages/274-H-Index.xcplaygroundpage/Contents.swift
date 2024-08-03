@@ -8,7 +8,7 @@ class Solution {
             ele1 > ele2
         }
         print(sortedCitations)
-        //Binary Sort
+        //Binary Search
         var start = 0
         var end = citations.count - 1
         var curCitations = 0
