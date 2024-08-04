@@ -13,9 +13,10 @@ class Solution {
         if let res = memoMap[curIdx] {
             return res
         }
-        let curChosen = nums[curIdx] + robRec(nums: nums, curIdx: curIdx + 2)
-        let curIgnored = robRec(nums: nums, curIdx: curIdx + 1)
-        let res = max(curChosen, curIgnored)
+
+        let robCurrent = nums[curIdx] + robRec(nums: nums, curIdx: curIdx + 2)
+        let ignoreCurrent = robRec(nums: nums, curIdx: curIdx + 1)
+        let res = max(robCurrent, ignoreCurrent)
         memoMap[curIdx] = res
         return res
     }

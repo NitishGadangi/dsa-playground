@@ -97,5 +97,18 @@
         <page name='162-Find Peak Element'/>
         <page name='33-Search in Rotated Sorted Array'/>
         <page name='34-Find First and Last Position of Element in Sorted Array'/>
+        <page name='215-Kth Largest Element in an Array'/>
+        <page name='139-Word Break'/>
+        <page name='322-Coin Change'/>
+        <page name='120-Triangle'/>
+        <page name='64-Minimum Path Sum'/>
+        <page name='63-Unique Paths II'/>
+        <page name='5-Longest Palindromic Substring'/>
+        <page name='97-Interleaving String'/>
+        <page name='72-Edit Distance'/>
+        <page name='221-Maximal Square'/>
+        <page name='433-Minimum Genetic Mutation'/>
+        <page name='77-Combinations'/>
+        <page name='46-Permutations'/>
     </pages>
 </playground>
