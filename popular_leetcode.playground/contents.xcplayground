@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'/>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='21-Merge Two Sorted Lists'/>
+        <page name='9-Palindrome Number'/>
+        <page name='1-Two Sum'/>
+        <page name='1512-Number of Good Pairs'/>
+        <page name='1423-Maximum Points You Can Obtain from Cards'/>
+        <page name='1268-Search Suggestions System'/>
+        <page name='1249-Minimum Remove to Make Valid Parentheses'/>
+        <page name='1091-Shortest Path in Binary Matrix'/>
+        <page name='560-Subarray Sum Equals K'/>
+    </pages>
+</playground>
