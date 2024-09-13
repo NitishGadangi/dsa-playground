@@ -35,3 +35,26 @@ class Solution {
         return res
     }
 }
+
+
+func solution(nums: [Int]) -> [[Int]] {
+    var res: [[Int]] = []
+    var temp: [Int] = []
+    backtrack(nums: nums, res: &res, temp: &temp, start: 0)
+    return res
+}
+
+func backtrack(nums: [Int], res: inout [[Int]], temp: inout [Int], start: Int) {
+    if start == 0 { // some condtion to calculate res
+        res.append(temp)
+    } else {
+        for idx in start..<nums.count {
+            if idx > start && nums[idx] == nums[idx - 1] {
+                continue // to avoid dupicates
+            }
+            temp.append(nums[idx])
+            backtrack(nums: nums, res: &res, temp: &temp, start: idx + 1)
+            temp.removeLast()
+        }
+    }
+}
