@@ -29,5 +29,20 @@
         <page name='56-Merge Intervals'/>
         <page name='74-Search a 2D Matrix'/>
         <page name='131-Palindrome Partitioning'/>
+        <page name='229-Majority Element II'/>
+        <page name='624-Maximum Distance in Arrays'/>
+        <page name='547-Number of Provinces'/>
+        <page name='718-Maximum Length of Repeated Subarray'/>
+        <page name='739-Daily Temperatures '/>
+        <page name='528-Random Pick with Weight'/>
+        <page name='930-Binary Subarrays With Sum'/>
+        <page name='945-Minimum Increment to Make Array Unique'/>
+        <page name='947-Most Stones Removed with Same Row or Column'/>
+        <page name='1143-Longest Common Subsequence'/>
+        <page name='983-Minimum Cost For Tickets'/>
+        <page name='1894-Find the Student that Will Replace the Chalk'/>
+        <page name='2028-Find Missing Observations'/>
+        <page name='1905-Count Sub Islands'/>
+        <page name='3282-Reach End of Array With Max Score'/>
     </pages>
 </playground>
