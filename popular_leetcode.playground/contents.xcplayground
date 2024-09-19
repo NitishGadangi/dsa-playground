@@ -44,5 +44,7 @@
         <page name='2028-Find Missing Observations'/>
         <page name='1905-Count Sub Islands'/>
         <page name='3282-Reach End of Array With Max Score'/>
+        <page name='236-Lowest Common Ancestor of a Binary Tree'/>
+        <page name='2096-Step-By-Step Directions From a Binary Tree Node to Another'/>
     </pages>
 </playground>
