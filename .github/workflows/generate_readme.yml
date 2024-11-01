@@ -22,7 +22,8 @@ jobs:
         python-version: '3.9'
 
     - name: Run README generation script
-      run: python readme_gen.py
+      run: |
+        python readme_gen.py
 
     - name: Commit and push changes
       env:
