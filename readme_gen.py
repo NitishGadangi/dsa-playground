@@ -34,6 +34,7 @@ def generate_readme():
             
             # Path to the 'pages' folder
             pages_path = os.path.join(item, "pages")
+            print(pages_path)
             
             # Check if 'pages' directory exists
             if os.path.isdir(pages_path):
