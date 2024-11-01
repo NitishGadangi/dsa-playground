@@ -33,7 +33,7 @@ def generate_readme():
             readme_content += "|------|-------|----------|----------------|\n"
             
             # Path to the 'pages' folder
-            pages_path = os.path.join(item, "pages")
+            pages_path = os.path.join(item, "Pages")
             print(pages_path)
             
             # Check if 'pages' directory exists
