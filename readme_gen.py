@@ -29,7 +29,7 @@ def generate_readme():
             readme_content += f"## {heading}\n\n"
             
             # Add table header
-            readme_content += "| S.No | Title | Solution | LeetCode Link |\n"
+            readme_content += "| S.No | Title | LeetCode Link | Solution |\n"
             readme_content += "|------|-------|----------|----------------|\n"
             
             # Path to the 'pages' folder
@@ -53,7 +53,7 @@ def generate_readme():
                         leetcode_link_formatted = f"[Problem]({leetcode_link})" if leetcode_link else "N/A"
                         
                         # Add row with serial number, title, solution link, and leetcode problem link
-                        readme_content += f"| {index} | {page_name} | [Solution]({content_file_link}) | {leetcode_link_formatted} |\n"
+                        readme_content += f"| {index} | {page_name} | {leetcode_link_formatted} | [Solution]({content_file_link}) |\n"
             readme_content += "\n"
 
     # Write to README.md
