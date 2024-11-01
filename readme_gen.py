@@ -30,7 +30,7 @@ def generate_readme():
                         content_path = os.path.join(item, "pages", page_folder, "content.swift")
                         
                         # Add hyperlink to content.swift
-                        readme_content += f"- [{page_name}]({content_path})\n"
+                        readme_content += f"- [{page_name}](./{content_path})\n"
             readme_content += "\n"
 
     # Write to README.md
