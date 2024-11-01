@@ -6,6 +6,18 @@ def format_heading(name):
     spaced_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', name).replace("_", " ")
     return spaced_name.capitalize()
 
+def extract_leetcode_link(content_file_path):
+    # Extract the first hyperlink from a line starting with //
+    try:
+        with open(content_file_path, 'r') as content_file:
+            for line in content_file:
+                line = line.strip()
+                if line.startswith("//"):
+                    return line[2:].strip()  # Remove // and strip extra whitespace
+    except FileNotFoundError:
+        pass
+    return ""  # Return empty if no link found
+
 def generate_readme():
     readme_content = "# Project Structure\n\n"
 
@@ -15,6 +27,10 @@ def generate_readme():
             # Format heading to title case without underscores
             heading = format_heading(item.replace(".playground", ""))
             readme_content += f"## {heading}\n\n"
+            
+            # Add table header
+            readme_content += "| Title | Solution | LeetCode Problem Link |\n"
+            readme_content += "|-------|----------|-----------------------|\n"
             
             # Path to the 'pages' folder
             pages_path = os.path.join(item, "pages")
@@ -26,11 +42,18 @@ def generate_readme():
                         # Remove .xcplaygroundpage suffix for list item
                         page_name = page_folder.replace(".xcplaygroundpage", "")
                         
-                        # Relative path to the content.swift file
-                        content_path = os.path.join(item, "pages", page_folder, "content.swift")
+                        # Relative path to the content.swift file with spaces replaced by %20
+                        content_file_path = os.path.join(item, "pages", page_folder, "content.swift")
+                        content_file_link = content_file_path.replace(" ", "%20")
                         
-                        # Add hyperlink to content.swift
-                        readme_content += f"- [{page_name}](./{content_path})\n"
+                        # Extract the LeetCode link from the first comment
+                        leetcode_link = extract_leetcode_link(content_file_path)
+                        
+                        # Format LeetCode link as hyperlink if available
+                        leetcode_link_formatted = f"[Link]({leetcode_link})" if leetcode_link else "N/A"
+                        
+                        # Add row with title, solution link, and leetcode problem link
+                        readme_content += f"| {page_name} | [Solution]({content_file_link}) | {leetcode_link_formatted} |\n"
             readme_content += "\n"
 
     # Write to README.md
