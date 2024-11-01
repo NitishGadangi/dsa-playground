@@ -222,3 +222,7 @@
 | 45 | 152-Maximum Product Subarray | [Problem](https://leetcode.com/problems/maximum-product-subarray/) | [Solution](seanprashad_leetcode_patterns.playground/Pages/152-Maximum%20Product%20Subarray.xcplaygroundpage/Contents.swift) |
 | 46 | 977-Squares of a Sorted Array | [Problem](https://leetcode.com/problems/squares-of-a-sorted-array/) | [Solution](seanprashad_leetcode_patterns.playground/Pages/977-Squares%20of%20a%20Sorted%20Array.xcplaygroundpage/Contents.swift) |
 
+
+-------
+
+This will be auto-generated soon
