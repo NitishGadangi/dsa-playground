@@ -19,7 +19,7 @@ def extract_leetcode_link(content_file_path):
     return ""  # Return empty if no link found
 
 def generate_readme():
-    readme_content = "# Project Structure\n\n"
+    readme_content = "# Lists of Problems Solved\n\n"
 
     # Traverse current directory
     for item in os.listdir("."):
@@ -29,7 +29,7 @@ def generate_readme():
             readme_content += f"## {heading}\n\n"
             
             # Add table header
-            readme_content += "| Title | Solution | LeetCode Problem Link |\n"
+            readme_content += "| Title | Solution | LeetCode Link |\n"
             readme_content += "|-------|----------|-----------------------|\n"
             
             # Path to the 'pages' folder
@@ -50,10 +50,10 @@ def generate_readme():
                         leetcode_link = extract_leetcode_link(content_file_path)
                         
                         # Format LeetCode link as hyperlink if available
-                        leetcode_link_formatted = f"[Link]({leetcode_link})" if leetcode_link else "N/A"
+                        leetcode_link_formatted = f"[Problem]({leetcode_link})" if leetcode_link else "N/A"
                         
                         # Add row with title, solution link, and leetcode problem link
-                        readme_content += f"| {page_name} | [Solution]({content_file_link}) | {leetcode_link_formatted} |\n"
+                        readme_content += f"| {page_name} | {leetcode_link_formatted} | [Solution]({content_file_link}) |\n"
             readme_content += "\n"
 
     # Write to README.md
