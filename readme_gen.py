@@ -43,7 +43,7 @@ def generate_readme():
                         page_name = page_folder.replace(".xcplaygroundpage", "")
                         
                         # Relative path to the content.swift file with spaces replaced by %20
-                        content_file_path = os.path.join(item, "pages", page_folder, "content.swift")
+                        content_file_path = os.path.join(item, "pages", page_folder, "Content.swift")
                         content_file_link = content_file_path.replace(" ", "%20")
                         
                         # Extract the LeetCode link from the first comment
