@@ -2,7 +2,7 @@
 
 ## Popular leetcode
 
-- [1367-Linked List in Binary Tree](./popular_leetcode.playground/pages/1367-Linked List in Binary Tree.xcplaygroundpage/content.swift)
+- [1367-Linked List in Binary Tree](/popular_leetcode.playground/pages/1367-Linked List in Binary Tree.xcplaygroundpage/content.swift)
 - [3282-Reach End of Array With Max Score](./popular_leetcode.playground/pages/3282-Reach End of Array With Max Score.xcplaygroundpage/content.swift)
 - [1091-Shortest Path in Binary Matrix](./popular_leetcode.playground/pages/1091-Shortest Path in Binary Matrix.xcplaygroundpage/content.swift)
 - [725-Split Linked List in Parts](./popular_leetcode.playground/pages/725-Split Linked List in Parts.xcplaygroundpage/content.swift)
