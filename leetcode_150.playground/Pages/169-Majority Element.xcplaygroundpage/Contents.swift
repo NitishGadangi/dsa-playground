@@ -1,9 +1,7 @@
-//: [Previous](@previous)
-
 import Foundation
 
 //https://leetcode.com/problems/majority-element/?envType=study-plan-v2&envId=top-interview-150
-//input - [2,2,1,1,1,2,2]
+
 class Solution {
     func majorityElement(_ nums: [Int]) -> Int {
         var majIdx = 0

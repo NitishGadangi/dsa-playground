@@ -1,5 +1,7 @@
 import Foundation
 
+//https://leetcode.com/problems/lexicographical-numbers/description/
+
 class Solution {
     func lexicalOrder(_ n: Int) -> [Int] {
         var curNum = 1

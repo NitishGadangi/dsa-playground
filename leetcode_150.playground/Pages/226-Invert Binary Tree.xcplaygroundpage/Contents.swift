@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 //https://leetcode.com/problems/invert-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150
