@@ -1,50 +1,19 @@
 import Foundation
 
-//https://leetcode.com/problems/meeting-rooms-ii/
+//https://leetcode.com/problems/kth-largest-element-in-an-array/
 
 class Solution {
-    func minMeetingRooms(_ intervals: [[Int]]) -> Int {
-        var intervals = intervals.sorted { first, second in
-            first[0] < second[0]
+    func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+        var minHeap = Heap<Int> { l, r in
+            l < r
         }
-        var minHeap = Heap<[Int]> { l, r in
-            l[1] < r[1]
-        }
-        
-        for intr in intervals {
-            if minHeap.isNotEmpty && minHeap.getTop()![1] <= intr[0] {
+        for num in nums {
+            minHeap.insert(item: num)
+            if minHeap.count > k {
                 minHeap.popTop()
             }
-            minHeap.insert(item: intr)
         }
-        
-        return minHeap.count
-    }
-}
-
-class SolutionWithoutHeap {
-    func minMeetingRooms(_ intervals: [[Int]]) -> Int {
-        var starts: [Int] = []
-        var ends: [Int] = []
-        for inter in intervals {
-            starts.append(inter[0])
-            ends.append(inter[1])
-        }
-        starts = starts.sorted()
-        ends = ends.sorted()
-        var sptr = 0
-        var eptr = 0
-        var num = 0
-        while sptr < intervals.count {
-            if starts[sptr] >= ends[eptr] {
-                num -= 1
-                eptr += 1
-            }
-            
-            sptr += 1
-            num += 1
-        }
-        return num
+        return minHeap.getTop()!
     }
 }
 
@@ -119,15 +88,11 @@ struct Heap<T> {
     }
     
     private mutating func heapify(idx: Int) {
-        guard let left = getLeftChildIdx(parent: idx),
-              let right = getRightChildIdx(parent: idx)
-        else { return }
-        
         var comp = idx
-        if comparator(heap[left], heap[comp]) {
+        if let left = getLeftChildIdx(parent: idx), comparator(heap[left], heap[comp]) {
             comp = left
         }
-        if comparator(heap[right], heap[comp]) {
+        if let right = getRightChildIdx(parent: idx), comparator(heap[right], heap[comp]) {
             comp = right
         }
         if comp != idx {
@@ -146,15 +111,13 @@ struct Heap<T> {
     }
     
     public mutating func popTop() -> T? {
-        var item: T? = heap.first
+        guard !isEmpty else { return nil }
+        let item = heap.first
         if count > 1 {
-            heap[0] = heap[count - 1]
-            heap.removeLast()
+            heap[0] = heap.removeLast()
             heapify(idx: 0)
-        } else if count == 1 {
-            heap.removeLast()
         } else {
-            return nil
+            heap.removeLast()
         }
         return item
     }

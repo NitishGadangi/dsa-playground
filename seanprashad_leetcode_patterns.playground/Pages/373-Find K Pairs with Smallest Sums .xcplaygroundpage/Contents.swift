@@ -1,54 +1,52 @@
 import Foundation
 
-//https://leetcode.com/problems/meeting-rooms-ii/
+//https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
 
 class Solution {
-    func minMeetingRooms(_ intervals: [[Int]]) -> Int {
-        var intervals = intervals.sorted { first, second in
-            first[0] < second[0]
-        }
-        var minHeap = Heap<[Int]> { l, r in
-            l[1] < r[1]
+    struct Pair: Comparable {
+        static func < (lhs: Solution.Pair, rhs: Solution.Pair) -> Bool {
+            return lhs.val < rhs.val
         }
         
-        for intr in intervals {
-            if minHeap.isNotEmpty && minHeap.getTop()![1] <= intr[0] {
-                minHeap.popTop()
-            }
-            minHeap.insert(item: intr)
-        }
-        
-        return minHeap.count
+        let val: Int
+        let i: Int
+        let j: Int
     }
-}
-
-class SolutionWithoutHeap {
-    func minMeetingRooms(_ intervals: [[Int]]) -> Int {
-        var starts: [Int] = []
-        var ends: [Int] = []
-        for inter in intervals {
-            starts.append(inter[0])
-            ends.append(inter[1])
+    
+    func kSmallestPairs(_ nums1: [Int], _ nums2: [Int], _ k: Int) -> [[Int]] {
+        var minHeap = Heap<Pair> { l, r in
+            return l < r
         }
-        starts = starts.sorted()
-        ends = ends.sorted()
-        var sptr = 0
-        var eptr = 0
-        var num = 0
-        while sptr < intervals.count {
-            if starts[sptr] >= ends[eptr] {
-                num -= 1
-                eptr += 1
-            }
+        var visited = Set<[Int]>()
+        var res: [[Int]] = []
+        var k = k
+        minHeap.insert(item: Pair(val: nums1[0] + nums2[0], i: 0, j: 0))
+        visited.insert([0, 0])
+        
+        while k > 0 && minHeap.isNotEmpty {
+            let curPair = minHeap.popTop()!
+            let i = curPair.i
+            let j = curPair.j
+            res.append([nums1[i], nums2[j]])
             
-            sptr += 1
-            num += 1
+            if i + 1 < nums1.count && !visited.contains([i + 1, j]) {
+                let val = nums1[i + 1] + nums2[j]
+                minHeap.insert(item: Pair(val: val, i: i + 1, j: j))
+                visited.insert([i + 1, j])
+            }
+            if j + 1 < nums2.count && !visited.contains([i, j + 1]) {
+                let val = nums1[i] + nums2[j + 1]
+                minHeap.insert(item: Pair(val: val, i: i, j: j + 1))
+                visited.insert([i, j + 1])
+            }
+            k -= 1
         }
-        return num
+        
+        return res
     }
 }
 
-struct Heap<T> {
+struct Heap<T: Comparable> {
     typealias HeapComparator = (_ l: T, _ r: T) -> Bool
     
     private(set) var heap = [T]()

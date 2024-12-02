@@ -1,50 +1,36 @@
 import Foundation
 
-//https://leetcode.com/problems/meeting-rooms-ii/
+//https://leetcode.com/problems/k-closest-points-to-origin/
 
 class Solution {
-    func minMeetingRooms(_ intervals: [[Int]]) -> Int {
-        var intervals = intervals.sorted { first, second in
-            first[0] < second[0]
+    struct Point {
+        let x: Int
+        let y: Int
+        let dist: Double
+        init(x: Int, y: Int) {
+            self.x = x
+            self.y = y
+            self.dist = sqrt(pow(Double(x), 2) + pow(Double(y), 2))
         }
-        var minHeap = Heap<[Int]> { l, r in
-            l[1] < r[1]
-        }
-        
-        for intr in intervals {
-            if minHeap.isNotEmpty && minHeap.getTop()![1] <= intr[0] {
-                minHeap.popTop()
-            }
-            minHeap.insert(item: intr)
-        }
-        
-        return minHeap.count
     }
-}
-
-class SolutionWithoutHeap {
-    func minMeetingRooms(_ intervals: [[Int]]) -> Int {
-        var starts: [Int] = []
-        var ends: [Int] = []
-        for inter in intervals {
-            starts.append(inter[0])
-            ends.append(inter[1])
+    func kClosest(_ points: [[Int]], _ k: Int) -> [[Int]] {
+        var maxHeap = Heap<Point> { l, r in
+            l.dist > r.dist
         }
-        starts = starts.sorted()
-        ends = ends.sorted()
-        var sptr = 0
-        var eptr = 0
-        var num = 0
-        while sptr < intervals.count {
-            if starts[sptr] >= ends[eptr] {
-                num -= 1
-                eptr += 1
+        
+        for pt in points {
+            let point = Point(x: pt[0], y: pt[1])
+            maxHeap.insert(item: point)
+            if maxHeap.count > k {
+                maxHeap.popTop()
             }
-            
-            sptr += 1
-            num += 1
         }
-        return num
+        
+        var res: [[Int]] = []
+        for pnt in maxHeap.heap {
+            res.append([pnt.x, pnt.y])
+        }
+        return res
     }
 }
 
@@ -119,15 +105,11 @@ struct Heap<T> {
     }
     
     private mutating func heapify(idx: Int) {
-        guard let left = getLeftChildIdx(parent: idx),
-              let right = getRightChildIdx(parent: idx)
-        else { return }
-        
         var comp = idx
-        if comparator(heap[left], heap[comp]) {
+        if let left = getLeftChildIdx(parent: idx), comparator(heap[left], heap[comp]) {
             comp = left
         }
-        if comparator(heap[right], heap[comp]) {
+        if let right = getRightChildIdx(parent: idx), comparator(heap[right], heap[comp]) {
             comp = right
         }
         if comp != idx {
@@ -146,15 +128,13 @@ struct Heap<T> {
     }
     
     public mutating func popTop() -> T? {
-        var item: T? = heap.first
+        guard !isEmpty else { return nil }
+        let item = heap.first
         if count > 1 {
-            heap[0] = heap[count - 1]
-            heap.removeLast()
+            heap[0] = heap.removeLast()
             heapify(idx: 0)
-        } else if count == 1 {
-            heap.removeLast()
         } else {
-            return nil
+            heap.removeLast()
         }
         return item
     }

@@ -1,50 +1,37 @@
 import Foundation
 
-//https://leetcode.com/problems/meeting-rooms-ii/
+//https://leetcode.com/problems/task-scheduler/
 
 class Solution {
-    func minMeetingRooms(_ intervals: [[Int]]) -> Int {
-        var intervals = intervals.sorted { first, second in
-            first[0] < second[0]
+    func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
+        var maxHeap = Heap<Int> { l, r in
+            l > r
         }
-        var minHeap = Heap<[Int]> { l, r in
-            l[1] < r[1]
+        var freq: [Character: Int] = [:]
+        for task in tasks {
+            freq[task, default: 0] += 1
         }
-        
-        for intr in intervals {
-            if minHeap.isNotEmpty && minHeap.getTop()![1] <= intr[0] {
-                minHeap.popTop()
-            }
-            minHeap.insert(item: intr)
+        for (task, count) in freq {
+            maxHeap.insert(item: count)
         }
         
-        return minHeap.count
-    }
-}
-
-class SolutionWithoutHeap {
-    func minMeetingRooms(_ intervals: [[Int]]) -> Int {
-        var starts: [Int] = []
-        var ends: [Int] = []
-        for inter in intervals {
-            starts.append(inter[0])
-            ends.append(inter[1])
-        }
-        starts = starts.sorted()
-        ends = ends.sorted()
-        var sptr = 0
-        var eptr = 0
-        var num = 0
-        while sptr < intervals.count {
-            if starts[sptr] >= ends[eptr] {
-                num -= 1
-                eptr += 1
+        var time = 0
+        while maxHeap.isNotEmpty {
+            var cycle = 0
+            var refill: [Int] = []
+            while cycle < n + 1 && maxHeap.isNotEmpty {
+                let curFreq = maxHeap.popTop()!
+                if curFreq > 1 {
+                    refill.append(curFreq - 1)
+                }
+                cycle += 1
             }
-            
-            sptr += 1
-            num += 1
+            for cnt in refill {
+                maxHeap.insert(item: cnt)
+            }
+            time += maxHeap.isEmpty ? cycle : n + 1
         }
-        return num
+        return time
     }
 }
 
