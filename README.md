@@ -296,4 +296,11 @@
 
 | S.No | Title | LeetCode Link | Solution |
 |------|-------|----------|----------------|
+| 1 | 547-Number of Provinces | [Problem](https://leetcode.com/problems/number-of-provinces) | [Solution](graph_theory_study_plan.playground/Pages/547-Number%20of%20Provinces.xcplaygroundpage/Contents.swift) |
+| 2 | 802-Find Eventual Safe States | [Problem](https://leetcode.com/problems/find-eventual-safe-states) | [Solution](graph_theory_study_plan.playground/Pages/802-Find%20Eventual%20Safe%20States.xcplaygroundpage/Contents.swift) |
+| 3 | 1466-Reorder Routes to Make All Paths Lead to the City Zero | [Problem](https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero) | [Solution](graph_theory_study_plan.playground/Pages/1466-Reorder%20Routes%20to%20Make%20All%20Paths%20Lead%20to%20the%20City%20Zero.xcplaygroundpage/Contents.swift) |
+| 4 | 1129-Shortest Path with Alternating Colors | [Problem](https://leetcode.com/problems/shortest-path-with-alternating-colors) | [Solution](graph_theory_study_plan.playground/Pages/1129-Shortest%20Path%20with%20Alternating%20Colors.xcplaygroundpage/Contents.swift) |
+| 5 | 841-Keys and Rooms | [Problem](https://leetcode.com/problems/keys-and-rooms) | [Solution](graph_theory_study_plan.playground/Pages/841-Keys%20and%20Rooms.xcplaygroundpage/Contents.swift) |
+| 6 | 1376-Time Needed to Inform All Employees | [Problem](https://leetcode.com/problems/time-needed-to-inform-all-employees) | [Solution](graph_theory_study_plan.playground/Pages/1376-Time%20Needed%20to%20Inform%20All%20Employees.xcplaygroundpage/Contents.swift) |
+| 7 | 797-All Paths From Source to Target | [Problem](https://leetcode.com/problems/all-paths-from-source-to-target/) | [Solution](graph_theory_study_plan.playground/Pages/797-All%20Paths%20From%20Source%20to%20Target.xcplaygroundpage/Contents.swift) |
 
