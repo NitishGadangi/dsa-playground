@@ -292,3 +292,8 @@
 | 108 | 120-Triangle | [Problem](https://leetcode.com/problems/triangle/description/?envType=study-plan-v2&envId=top-interview-150) | [Solution](leetcode_150.playground/Pages/120-Triangle.xcplaygroundpage/Contents.swift) |
 | 109 | 155-Min Stack | [Problem](https://leetcode.com/problems/min-stack/?envType=study-plan-v2&envId=top-interview-150) | [Solution](leetcode_150.playground/Pages/155-Min%20Stack.xcplaygroundpage/Contents.swift) |
 
+## Graph theory study plan
+
+| S.No | Title | LeetCode Link | Solution |
+|------|-------|----------|----------------|
+
