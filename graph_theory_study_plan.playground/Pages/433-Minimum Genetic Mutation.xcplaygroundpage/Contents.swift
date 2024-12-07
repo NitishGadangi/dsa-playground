@@ -23,7 +23,6 @@ class Solution {
             if cur.gene == endGene {
                 return cur.count
             }
-            print(cur.gene)
             var curGenArr = Array(cur.gene)
             var endGenArr = Array(endGene)
             for gen in genArr {
