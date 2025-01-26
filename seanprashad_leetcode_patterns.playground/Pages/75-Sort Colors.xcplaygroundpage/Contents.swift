@@ -10,6 +10,8 @@ class Solution {
         var mid = 0
         var hi = nums.count - 1
         // at any point low, mid, hi points to unknown elements only
+        // hence we dont do midx += 1 for case 2
+        // but we do mid += 1 for case 0 as for item at idx low, we already filtered
         while mid <= hi {
             let cur = nums[mid]
             print("\(low) - \(mid) - \(hi) - \(nums)")

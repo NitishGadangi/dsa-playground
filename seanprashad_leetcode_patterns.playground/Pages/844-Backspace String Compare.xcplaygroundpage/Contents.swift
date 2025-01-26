@@ -6,8 +6,6 @@ class Solution {
     func backspaceCompare(_ s: String, _ t: String) -> Bool {
         let sParsed = parseString(str: s)
         let tParsed = parseString(str: t)
-        print("s: \(sParsed)")
-        print("t: \(tParsed)")
         return sParsed == tParsed
     }
     

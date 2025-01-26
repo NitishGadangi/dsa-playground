@@ -4,6 +4,8 @@ import Foundation
 
 //https://medium.com/@zephyr.ventum/floyds-tortoise-and-hare-cycle-finding-algorithm-my-over-explanation-5631c5ce71d7
 
+//https://www.youtube.com/watch?v=PvrxZaH_eZ4
+
 public class ListNode {
     public var val: Int
     public var next: ListNode?
