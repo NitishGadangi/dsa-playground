@@ -50,6 +50,74 @@ restart_playground() {
     open_playground "$file"
 }
 
+# Function to create a new page in a playground
+create_page() {
+    list_playgrounds
+    read -p "Select a playground file by number or name: " choice
+
+    # Resolve playground file
+    if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -le "${#playgrounds[@]}" ] && [ "$choice" -ge 1 ]; then
+        file="${playgrounds[$((choice - 1))]}"
+    else
+        file="$choice"
+    fi
+
+    if [ ! -d "$file" ]; then
+        echo "Playground not found: $file"
+        exit 1
+    fi
+
+    read -p "Enter the new page name: " page_name
+    if [ -z "$page_name" ]; then
+        echo "Page name cannot be empty."
+        exit 1
+    fi
+
+    # Create Pages directory if it doesn't exist
+    mkdir -p "$file/Pages"
+
+    page_dir="$file/Pages/$page_name.xcplaygroundpage"
+    if [ -d "$page_dir" ]; then
+        echo "Page '$page_name' already exists in '$file'."
+        exit 1
+    fi
+
+    mkdir -p "$page_dir"
+
+    # Create Contents.swift
+    cat > "$page_dir/Contents.swift" <<EOF
+import Foundation
+
+// Auto-generated-page
+EOF
+
+    # Update contents.xcplayground
+    manifest="$file/contents.xcplayground"
+    if [ -f "$manifest" ]; then
+        # Check if <pages> tag exists
+        if grep -q "<pages>" "$manifest"; then
+            # Insert before </pages>
+            sed -i '' "s|</pages>|    <page name='$page_name'/>\\
+    </pages>|" "$manifest"
+        elif grep -q "</playground>" "$manifest"; then
+            # Insert before </playground>
+            sed -i '' "s|</playground>|    <pages>\\
+        <page name='$page_name'/>\\
+    </pages>\\
+</playground>|" "$manifest"
+        elif grep -q "/>" "$manifest"; then
+            # Convert <playground ... /> to <playground ... > ... </playground>
+            sed -i '' "s|/>| >\\
+    <pages>\\
+        <page name='$page_name'/>\\
+    </pages>\\
+</playground>|" "$manifest"
+        fi
+    fi
+
+    echo "Created page '$page_name' in '$file'."
+}
+
 # Main script logic
 case $1 in
     open)
@@ -58,7 +126,10 @@ case $1 in
     restart)
         restart_playground "$2"
         ;;
+    create)
+        create_page
+        ;;
     *)
-        echo "Usage: $0 {open|restart} [filename]"
+        echo "Usage: $0 {open|restart|create} [filename]"
         ;;
 esac
