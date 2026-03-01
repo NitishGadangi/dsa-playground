@@ -91,30 +91,6 @@ import Foundation
 // Auto-generated-page
 EOF
 
-    # Update contents.xcplayground
-    manifest="$file/contents.xcplayground"
-    if [ -f "$manifest" ]; then
-        # Check if <pages> tag exists
-        if grep -q "<pages>" "$manifest"; then
-            # Insert before </pages>
-            sed -i '' "s|</pages>|    <page name='$page_name'/>\\
-    </pages>|" "$manifest"
-        elif grep -q "</playground>" "$manifest"; then
-            # Insert before </playground>
-            sed -i '' "s|</playground>|    <pages>\\
-        <page name='$page_name'/>\\
-    </pages>\\
-</playground>|" "$manifest"
-        elif grep -q "/>" "$manifest"; then
-            # Convert <playground ... /> to <playground ... > ... </playground>
-            sed -i '' "s|/>| >\\
-    <pages>\\
-        <page name='$page_name'/>\\
-    </pages>\\
-</playground>|" "$manifest"
-        fi
-    fi
-
     echo "Created page '$page_name' in '$file'."
 }
 
