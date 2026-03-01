@@ -19,7 +19,7 @@ open_playground() {
 
     if [ -z "$file" ]; then
         list_playgrounds
-        read -p "Select a playground file by number or name: " choice
+        read -e -p "Select a playground file by number or name: " choice
 
         # Check if input is a number and within range
         if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -le "${#playgrounds[@]}" ] && [ "$choice" -ge 1 ]; then
@@ -67,7 +67,7 @@ create_page() {
         exit 1
     fi
 
-    read -p "Enter the new page name: " page_name
+    read -e -p "Enter the new page name: " page_name
     if [ -z "$page_name" ]; then
         echo "Page name cannot be empty."
         exit 1
