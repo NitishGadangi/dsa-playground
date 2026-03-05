@@ -73,6 +73,13 @@ create_page() {
         exit 1
     fi
 
+    read -p "Do you want to restart Xcode (quit -> create -> reopen)? (y/n): " restart_choice
+
+    if [[ "$restart_choice" =~ ^[Yy]$ ]]; then
+        echo "Quitting Xcode..."
+        killall Xcode 2>/dev/null || echo "No running instances of Xcode found."
+    fi
+
     # Create Pages directory if it doesn't exist
     mkdir -p "$file/Pages"
 
@@ -92,6 +99,10 @@ import Foundation
 EOF
 
     echo "Created page '$page_name' in '$file'."
+
+    if [[ "$restart_choice" =~ ^[Yy]$ ]]; then
+        open_playground "$file"
+    fi
 }
 
 # Main script logic
