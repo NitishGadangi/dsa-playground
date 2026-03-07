@@ -47,6 +47,8 @@ restart_playground() {
     echo ""
     killall Xcode 2>/dev/null || echo "No running instances of Xcode found."
 
+    echo "Reopening '$file' in 1 second..."
+    sleep 1
     open_playground "$file"
 }
 
@@ -101,6 +103,8 @@ EOF
     echo "Created page '$page_name' in '$file'."
 
     if [[ "$restart_choice" =~ ^[Yy]$ ]]; then
+        echo "Reopening '$file' in 1 second..."
+        sleep 1
         open_playground "$file"
     fi
 }
