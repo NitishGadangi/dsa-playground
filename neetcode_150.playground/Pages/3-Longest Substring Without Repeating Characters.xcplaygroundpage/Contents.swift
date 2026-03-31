@@ -11,11 +11,9 @@ class Solution {
         var sArr = Array(s)
         while l <= r && r < s.count {
             let cur = sArr[r]
-            if set.contains(cur) {
-                while set.contains(cur) {
-                    set.remove(sArr[l])
-                    l += 1
-                }
+            while set.contains(cur) {
+                set.remove(sArr[l])
+                l += 1
             }
             set.insert(cur)
             res = max(res, r - l + 1)
